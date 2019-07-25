@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: product
+  jackson:
+    default-property-inclusion: non_null
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  cloud:
+    consul:
+      discovery:
+        enabled: true
+        instance-id: sc-product
+  jpa:
+    show-sql: true
+swagger:
+  enabled: true
+  base-package: cn.net.liaowei.sc.product
