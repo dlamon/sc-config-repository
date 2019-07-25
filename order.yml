@@ -1,8 +1,4 @@
 spring:
-  cloud:
-    consul:
-      discovery:
-        instance-id: sc-order
   jackson:
     default-property-inclusion: non_null
     date-format: yyyy-MM-dd HH:mm:ss
