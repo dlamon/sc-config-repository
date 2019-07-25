@@ -1,10 +1,6 @@
 server:
   port: 8086
 spring:
-  cloud:
-    consul:
-      host: 192.168.99.1034
-      port: 8500
   datasource:
     username: root
     password: root123
