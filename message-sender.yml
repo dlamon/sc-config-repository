@@ -1,8 +1,7 @@
-spring:
-  application:
-    name: message-sender
 server:
   port: 8002
 spring:
+  application:
+    name: message-sender
   rabbitmq:
     host: 192.168.99.108
