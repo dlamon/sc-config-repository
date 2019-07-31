@@ -8,8 +8,12 @@ spring:
           destination: streamCommonTopic
           group: common
           content-type: application/json
-    rabbit:
-      bindings:
-        commonInput:
-          consumer:
-            auto-bind-dlq: true
+        orderInput:
+          destination: streamOrderTopic
+          group: order
+          content-type: application/json
+      rabbit:
+        bindings:
+          commonInput:
+            consumer:
+              auto-bind-dlq: true
