@@ -1,3 +1,15 @@
 spring:
   application:
     name: message
+  cloud:
+    stream:
+      bindings:
+        commonInput:
+          destination: streamCommonTopic
+          group: common
+          content-type: application/json
+    rabbit:
+      bindings:
+        commonInput:
+          consumer:
+            auto-bind-dlq: true
