@@ -5,3 +5,11 @@ spring:
     name: message-sender
   rabbitmq:
     host: 192.168.99.108
+  stream:
+    bindings:
+      commonOutput:
+        destination: streamCommonTopic
+        content-type: application/json
+      orderOutput:
+        destination: streamOrderTopic
+        content-type: application/json
