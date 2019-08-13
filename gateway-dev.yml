@@ -47,7 +47,7 @@ spring:
             redis-rate-limiter.replenishRate: 1
             redis-rate-limiter.burstCapacity: 2
             key-resolver: "#{@IPKeyResolver}"
-        order: -1000
+        # order: -1000
       - id: config_route
         uri: lb://config
         predicates:
