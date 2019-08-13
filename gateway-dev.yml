@@ -37,7 +37,7 @@ spring:
       - id: product_route
         uri: lb://product
         predicates:
-        - Path= /product/**
+        - Path=/product/**
         filters:
         - StripPrefix=1
         - Product=true
@@ -46,3 +46,9 @@ spring:
             redis-rate-limiter.replenishRate: 1
             redis-rate-limiter.burstCapacity: 2
             key-resolver: "#{@IPKeyResolver}"
+      - id: config_route
+        uri: lb://config
+        predicates:
+        - Path=/config/**
+        filters:
+        - StripPrefix=1
