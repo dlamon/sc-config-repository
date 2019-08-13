@@ -1,2 +1,42 @@
 server:
   port: 9000
+spring:
+  rabbitmq:
+    host: 192.168.99.108
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
+#          predicates[0]:
+#            name: Path
+#            args[pattern]: "'/'+serviceId+'/**'"
+#          filters[0]:
+#            name: RewritePath
+#            args[regexp]: "'/' + serviceId + '/(?<remaining>.*)'"
+#            args[replacement]: "'/${remaining}'"
+#          predicates[1]:
+#            name: Path
+#            args[pattern]: "'/'+serviceId+'/**'"
+#          filters[1]:
+#            name: AddRequestParameter
+#            args:
+#              name: "'foo'"
+#              value: serviceId
+      routes:
+    #   - id: repeat_product_route
+    #     uri: lb://product
+    #     predicates:
+    #     - Path=/repeat-product/**
+    #     - Method=GET
+    #     filters:
+    #     - StripPrefix=1
+      - id: product_route
+        uri: lb://product
+        predicates:
+        - Path= /product/**
+        filters:
+        - StripPrefix=1
+        - Product=true
+trace: true
