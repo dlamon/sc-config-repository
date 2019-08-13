@@ -43,6 +43,7 @@ spring:
         filters:
         - StripPrefix=1
         - AddRequestParameter=foo, bar
+        # 自定义filter
         - Product=true
         - name: RequestRateLimiter
           args:
