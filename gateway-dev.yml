@@ -27,13 +27,13 @@ spring:
 #              name: "'foo'"
 #              value: serviceId
       routes:
-    #   - id: repeat_product_route
-    #     uri: lb://product
-    #     predicates:
-    #     - Path=/repeat-product/**
-    #     - Method=GET
-    #     filters:
-    #     - StripPrefix=1
+      - id: repeat_product_route
+        uri: lb://product
+        predicates:
+        - Path=/repeat-product/**
+        - Method=GET
+        filters:
+        - StripPrefix=1
       - id: product_route
         uri: lb://product
         predicates:
