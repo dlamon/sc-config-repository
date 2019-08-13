@@ -42,7 +42,7 @@ spring:
         - StripPrefix=1
         - Product=true
         - name: RequestRateLimiter
-            args:
-              redis-rate-limiter.replenishRate: 10
-              redis-rate-limiter.burstCapacity: 20
-              key-resolver: "#{@IPKeyResolver}"
+          args:
+            redis-rate-limiter.replenishRate: 10
+            redis-rate-limiter.burstCapacity: 20
+            key-resolver: "#{@IPKeyResolver}"
