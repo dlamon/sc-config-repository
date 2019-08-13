@@ -3,6 +3,8 @@ server:
 spring:
   rabbitmq:
     host: 192.168.99.108
+  redis:
+    host: 192.168.99.108
   cloud:
     gateway:
       discovery:
@@ -39,4 +41,8 @@ spring:
         filters:
         - StripPrefix=1
         - Product=true
-trace: true
+        - name: RequestRateLimiter
+            args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+                key-resolver: "#{@IPKeyResolver}"
