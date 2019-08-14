@@ -51,4 +51,4 @@ spring:
             redis-rate-limiter.burstCapacity: 2
             key-resolver: "#{@IPKeyResolver}"
         # 通过设置order可以覆盖通过DiscoveryClient自动建立的路由
-        order: -1000
+        order: -2147483647
