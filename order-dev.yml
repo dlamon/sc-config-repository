@@ -44,6 +44,6 @@ hystrix:
 logging:
   level:
     root: info
-    org.springframework.web: trace
+    # org.springframework.web: trace
 env:
   dev
