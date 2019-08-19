@@ -23,7 +23,7 @@ hystrix:
           thread:
             timeoutInMilliseconds: 2000
     # 针对特定接口配置超时时间控制， 该控制时间会受到ribbon超时时间控制
-    ProductClient#list.*(List):
+    ProductClient#listByProductId(List):
       execution:
         isolation:
           thread:
