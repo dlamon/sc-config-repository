@@ -12,5 +12,5 @@ turbine:
 logging:
   level:
     root: info
-    org.springframework.web: trace
+    # org.springframework.web: trace
 # 访问地址：http://localhost:9001/turbine.stream
