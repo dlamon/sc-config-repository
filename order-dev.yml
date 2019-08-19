@@ -27,7 +27,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 3000
+            timeoutInMilliseconds: 2000
       circuitBreaker:
         # 开启hystrix 断路器
         enabled: true
