@@ -11,3 +11,8 @@ swagger:
   base-package: cn.net.liaowei.sc.order
   title: "订单服务"
   version: v0.0.1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["health", "info", "hystrix-stream"]
