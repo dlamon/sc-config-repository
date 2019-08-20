@@ -8,6 +8,8 @@ spring:
   sleuth:
     sampler:
       probability: 1
+    async:
+      enabled: false
   zipkin:
     base-url: http://192.168.99.108:9411
     sender:
