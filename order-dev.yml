@@ -39,11 +39,10 @@ hystrix:
         sleepWindowInMilliseconds: 10000
         # 设置断路器打开的错误百分比条件，例如在滚动窗口中，发生了10次请求，如果出现了7次异常，则错误百分比为70%，断路器将为打开状态
         errorThresholdPercentage: 60
-  metrics:
-    enabled: true
 logging:
   level:
     root: info
     # org.springframework.web: trace
+    org.springframework.cloud.openfeign: debug
 env:
   dev
