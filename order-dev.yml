@@ -51,5 +51,8 @@ logging:
     root: info
     # org.springframework.web: trace
     org.springframework.cloud.openfeign: debug
+  graylog:
+    host: 192.168.99.108
+    port: 12201
 env:
   dev
