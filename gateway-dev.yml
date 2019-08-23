@@ -61,3 +61,7 @@ spring:
             key-resolver: "#{@IPKeyResolver}"
         # 通过设置order可以覆盖通过DiscoveryClient自动建立的路由
         order: -2147483647
+logging:
+  graylog:
+    host: 192.168.99.108
+    port: 12201
