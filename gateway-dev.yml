@@ -20,7 +20,7 @@ spring:
         locator:
           # 开启后，如果有新服务注册到注册中心，gateway不会主动同步
           # 但会在下一次通过lb调用服务时进行同步
-          enabled: true
+          enabled: false
           lower-case-service-id: true
 #          predicates[0]:
 #            name: Path
@@ -61,6 +61,19 @@ spring:
             key-resolver: "#{@IPKeyResolver}"
         # 通过设置order可以覆盖通过DiscoveryClient自动建立的路由
         order: -2147483647
+      - id: buy_rest_route
+        uri: lb://buy-rest
+        predicates:
+        - Path=/buy/**
+        filters:
+        - StripPrefix=1
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: 1
+            redis-rate-limiter.burstCapacity: 2
+            key-resolver: "#{@IPKeyResolver}"
+        # 通过设置order可以覆盖通过DiscoveryClient自动建立的路由
+        order: -2147483646
 logging:
   graylog:
     host: 192.168.99.108
