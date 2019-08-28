@@ -20,7 +20,7 @@ spring:
         locator:
           # 开启后，如果有新服务注册到注册中心，gateway不会主动同步
           # 但会在下一次通过lb调用服务时进行同步
-          enabled: true
+          enabled: false
           lower-case-service-id: true
 #          predicates[0]:
 #            name: Path
@@ -64,7 +64,7 @@ spring:
       - id: buy_rest_route
         uri: lb://buy-rest
         predicates:
-        - Path=/buy/**
+        - Path=/buy-rest/**
         filters:
         - StripPrefix=1
         - name: RequestRateLimiter
