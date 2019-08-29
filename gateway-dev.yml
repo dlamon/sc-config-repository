@@ -60,7 +60,7 @@ spring:
             redis-rate-limiter.burstCapacity: 2
             key-resolver: "#{@IPKeyResolver}"
         # 通过设置order可以覆盖通过DiscoveryClient自动建立的路由
-        order: -2147483647
+        order: -10000
       - id: buy_rest_route
         uri: lb://buy-rest
         predicates:
@@ -73,7 +73,7 @@ spring:
             redis-rate-limiter.burstCapacity: 2
             key-resolver: "#{@IPKeyResolver}"
         # 通过设置order可以覆盖通过DiscoveryClient自动建立的路由
-        order: -2147483646
+        order: -10001
 logging:
   graylog:
     host: 192.168.99.108
