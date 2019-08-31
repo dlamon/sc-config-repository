@@ -20,7 +20,7 @@ spring:
         locator:
           # 开启后，如果有新服务注册到注册中心，gateway不会主动同步
           # 但会在下一次通过lb调用服务时进行同步
-          enabled: false
+          enabled: true
           lower-case-service-id: true
 #          predicates[0]:
 #            name: Path
